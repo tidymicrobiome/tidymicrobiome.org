@@ -1,0 +1,14 @@
+bandtwo:
+- url: /start/
+  title: Tutorials
+  icon: fa-folder-open
+  icon_pack: fas
+  what: |
+    You can download the demo data and learn how to use the `tidymicrobiome` for microbiome data processing and analysis.
+
+- url: /contact/
+  title: Contact us
+  icon: fa-envelope
+  icon_pack: fas
+  what: |
+    Don't hesitate to reach us out if you have any questions!

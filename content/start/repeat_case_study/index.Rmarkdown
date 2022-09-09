@@ -1,0 +1,81 @@
+---
+title: "Repeat case study by docker"
+weight: 17
+author:
+- name: Xiaotao Shen (https://www.shenxt.info/)
+date: "Created on 2022-03-07 and updated on `r Sys.Date()`"
+output:
+  html_document:
+    number_sections: true
+    df_print: paged
+    toc: yes
+  pdf_document:
+    toc: no
+vignette: >
+  %\VignetteIndexEntry{repeat_case_study}
+  %\VignettePackage{tidymass}
+  % \VignetteEngine{knitr::rmarkdown}
+  % \usepackage[utf8]{inputenc}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE, echo=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  warning = FALSE,
+  message = TRUE,
+  out.width = "100%"
+)
+knitr::opts_knit$set(root.dir = here::here("content/start"))
+```
+
+# Introduction
+
+You can use the docker image of case study to repeat all the analysis and results in the `tidymass` manuscript.
+
+The link of the docker image: [https://hub.docker.com/r/jaspershen/tidymass-case-study](https://hub.docker.com/r/jaspershen/tidymass-case-study) 
+
+# Download and install `docker`
+
+Please refer to the [official website](https://www.docker.com/get-started) to download and install docker. And then run docker.
+
+1. If you are using Mac, see [here](https://docs.docker.com/desktop/mac/install/).
+
+2. If you are using Windows, see [here](https://docs.docker.com/desktop/windows/install/).
+
+3. If you are using Linux, see [here](https://docs.docker.com/engine/install/ubuntu/).
+
+![](figures/fig2.png)
+
+# Pull the `tidymass-case-study` image
+
+Open your `terminal` and then type the code below:
+
+```
+docker pull jaspershen/tidymass-case-study:latest
+```
+
+# Run `tidymass-case-study` docker image
+
+In your terminal, run the code below:
+
+```
+docker run -e PASSWORD=tidymass -p 8787:8787 jaspershen/tidymass-case-study:latest
+```
+
+Then open the browser and visit <http://localhost:8787> to power on RStudio server. The user name is `rstudio` and the password is `tidymass`.
+
+![](figures/fig1.png)
+
+# Run case study code
+
+Open the `tidymass_case_study.Rmd`, and then click `Knit`.
+
+![](figures/repeat_case_study.gif)
+
+# Session information
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+sessionInfo()
+```

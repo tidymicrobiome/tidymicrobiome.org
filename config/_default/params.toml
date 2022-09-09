@@ -1,0 +1,77 @@
+# Description for social sharing and search engines.
+description = "An Object-oriented Reproducible Analysis Framework for microbiome data."
+
+# Default image for social sharing and search engines. Place image in `static/images/` folder and specify image name here.
+sharing_image = "tidymicrobiome_logo.png"
+twitter_image = "tidymicrobiome_logo.png"
+
+# Link custom CSS and JS assets
+#   (relative to /static/css and /static/js respectively)
+custom_css = ["tm.css"]
+custom_js = ["tm.js"]
+
+# Define base hex url for index page (where the stickers link out to)
+hex_base_url = "tidymicrobiome.github.io/"
+hex_ext = "svg"
+    
+# Define "news" as both articles and events
+mainSections = ["articles", "events"]
+
+# options for highlight.js (version, additional languages, and theme)
+disable_highlightjs = "true"
+highlightjsVersion = "9.11.0"
+highlightjsCDN = "//cdn.bootcss.com"
+highlightjsLang = ["r", "yaml"]
+highlightjsTheme = "github"
+
+MathJaxCDN = "//cdn.bootcss.com"
+MathJaxVersion = "2.7.1"
+
+[footer]
+    github_url = "https://github.com/tidymicrobiome"
+    twitter_url = ""
+    support = "Template is from [tidymodels](https://www.tidymodels.org/)"
+
+# leave blank in quotes for the default = true
+# to turn off, set = false (no quotes)
+[authors]
+    show_list = "" # on list page, default is true
+    show_single = "" # on single pages, default is true
+    show_latest = "" # on bio, default is true
+    label_latest = "" # on bio, default is "Latest"
+
+# leave blank in quotes for the default = true
+# to turn off, set = false (no quotes)
+[events]
+    link_archive = "" # default is true
+
+# customize your site colors
+# these colors get applied by layouts/partials/custom-site.css
+# then, the layouts/partials/head_includes.html uses that partial
+# the partial head_includes.html is called in the partial header.html everywhere!
+[colors]
+    text = "#21130d" # off-black
+    # Links
+    link = "#1e81b0" # main accent
+    link_hover = "#76b5c5" #lighter
+    # Footer
+    footer_primary = "#bebebd"
+    footer_text = "#1e81b0" 
+    # Backgrounds
+    background = "#ffffff" 
+    home_section_odd = "#ffffff"
+    home_section_even = "#fcfcfc" 
+    # Menu
+    menu_primary = "#bebebd" 
+    menu_text = "white"
+    menu_text_active = "#1e81b0"
+    menu_text_current = "#1e81b0"
+    menu_decorate_current = "none"
+    menu_title = "#1e81b0" # tidymicrobiome
+    menu_title_active = "white" 
+    menu_box_hover = "white" 
+    menu_box_active = "#fcfcfc" 
+    # Tables
+    header_background = "#1a162d80"
+    table_row_even = "#fcfcfc"
+    table_row_odd = "#1a162d10"

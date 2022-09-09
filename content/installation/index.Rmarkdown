@@ -1,0 +1,286 @@
+---
+title: "Install tidymicrobiome"
+---
+
+# Install `tidymicrobiome` packages
+
+> Please make sure your internet is connected and stable. 
+
+And if you have any problems during the installation, please feel free to send email to us (shenxt@stanford.edu) or contact me via [other social medias](https://www.tidymicrobiome.org/contact/).
+
+## Update R version
+
+`tidymicrobiome` require R version > 4.1. 
+
+You can check your R version in your console:
+
+```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+version
+```
+
+![](figures/fig1.png)
+If your R version is < 4.1, please [download and install the latest version of R](https://cran.r-project.org/mirrors.html), and then restart your R.
+
+## Install `tidymicrobiome` from `GitLab`
+
+### Update `remotes` pacakge
+
+You can use the `remotes` package to install `tidymicrobiome`. 
+
+Please update `remotes` first and then restart your r session.
+
+```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+install.packages("remotes")
+```
+
+### Install `tidymicrobiome`
+
+Install `tidymicrobiome` by:
+
+```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+remotes::install_gitlab("jaspershen/tidymicrobiome", dependencies = TRUE)
+```
+
+> During installing, it may ask you several times: "Would you like to update some pacakges?" Just Enter the `Enter` or `Retrun` key to skip updates.
+
+![](figures/fig2.png)
+
+> If you have a completely fresh R enivorment, it needs to install all the dependent packages, so it will take around 30 mins to finish the installation of `tidymicrobiome`. In my Mac pro (macOS Monterey, 2.3 GHz 8-core intel core i9, 16GB 2667 MHz DDR4), it takes about 30 mins to finish the installation in a completely fresh R enivorment.
+
+### Install `tidymicrobiome` packages one by one
+
+If you use the Windows OS and the dependencies can not be installed, try to install all the `tidymicrobiome` packages one by one.
+
+```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+remotes::install_gitlab("jaspershen/masstools", dependencies = TRUE)
+remotes::install_gitlab("jaspershen/massdataset", dependencies = TRUE)
+remotes::install_gitlab("jaspershen/massqc", dependencies = TRUE)
+remotes::install_gitlab("jaspershen/massprocesser", dependencies = TRUE)
+remotes::install_gitlab("jaspershen/masscleaner", dependencies = TRUE)
+remotes::install_gitlab("jaspershen/massstat", dependencies = TRUE)
+remotes::install_gitlab("jaspershen/metid", dependencies = TRUE)
+remotes::install_gitlab("jaspershen/metpath", dependencies = TRUE)
+```
+
+## Install `tidymicrobiome` from `GitHub`
+
+### Install `tidymicrobiome`
+
+```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+remotes::install_github("tidymicrobiome/tidymicrobiome", dependencies = TRUE)
+```
+
+> During the installation, it will ask if you want to update some packages for few times, just enter `Enter` or `Reurn` key to skip it.
+
+If there is a error like below:
+
+```
+Error: Failed to install 'tidymicrobiome' from GitHub: HTTP error 403. API rate limit exceeded for 171.66.10.237. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)
+```
+
+Try to resolve it by:
+
+1. In you R console, type this code:
+
+```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+usethis::create_github_token()
+```
+
+It will open a page in browser, and create a "New personal access token" and copy it.
+
+![](figures/fig3.png)
+
+2. Then type this code:
+
+```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+usethis::edit_r_environ()
+```
+
+and then add one line like below:
+
+```
+GITHUB_PAT=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
+```
+> The `GITHUB_PAT` should be yours that is created in step 1.
+
+And then restart R session and try again.
+
+
+### Install `tidymicrobiome` packages one by one
+
+If you use the Windows OS and the dependencies can not be installed, try to install all the `tidymicrobiome` packages one by one.
+
+```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+remotes::install_github("tidymicrobiome/masstools", dependencies = TRUE)
+remotes::install_github("tidymicrobiome/massdataset", dependencies = TRUE)
+remotes::install_github("tidymicrobiome/massqc", dependencies = TRUE)
+remotes::install_github("tidymicrobiome/massprocesser", dependencies = TRUE)
+remotes::install_github("tidymicrobiome/masscleaner", dependencies = TRUE)
+remotes::install_github("tidymicrobiome/massstat", dependencies = TRUE)
+remotes::install_github("tidymicrobiome/metid", dependencies = TRUE)
+remotes::install_github("tidymicrobiome/metpath", dependencies = TRUE)
+```
+
+
+## Install `tidymicrobiome` from `Gitee`
+
+If you can't install pacakgs from `GitHub` and `GitLab`, please try install packages from `Gitee`.
+
+### Install `tidymicrobiome`
+
+```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+remotes::install_git(url = "https://gitee.com/jaspershen/tidymicrobiome", dependencies = TRUE)
+```
+
+### Install `tidymicrobiome` packages one by one.
+
+If you use the Windows OS and the dependencies can not be installed, try to install all the `tidymicrobiome` packages one by one.
+
+```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+remotes::install_git(url = "https://gitee.com/jaspershen/masstools", dependencies = TRUE)
+remotes::install_git(url = "https://gitee.com/jaspershen/massdataset", dependencies = TRUE)
+remotes::install_git(url = "https://gitee.com/jaspershen/massqc", dependencies = TRUE)
+remotes::install_git(url = "https://gitee.com/jaspershen/massprocesser", dependencies = TRUE)
+remotes::install_git(url = "https://gitee.com/jaspershen/masscleaner", dependencies = TRUE)
+remotes::install_git(url = "https://gitee.com/jaspershen/massstat", dependencies = TRUE)
+remotes::install_git(url = "https://gitee.com/jaspershen/metid", dependencies = TRUE)
+remotes::install_git(url = "https://gitee.com/jaspershen/metpath", dependencies = TRUE)
+```
+
+[Let me know if you have any questions](https://github.com/tidymicrobiome/tidymicrobiome/issues).
+
+# Update `tidymicrobiome`
+
+You can use the `tidymicrobiome` to check the version of all packages and update them. 
+
+## Check version
+
+If you want to check if there are updates for `tidymicrobiome` and packages in it. Just check it like this.
+
+```{r,eval=FALSE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+tidymicrobiome::check_tidymicrobiome_version()
+```
+
+## Update
+
+The `update_tidymicrobiome()` function can be used to update `tidymicrobiome` and packages in it.
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+tidymicrobiome::update_tidymicrobiome(from = "gitlab")
+```
+
+> If the `from = "gitlab"` doesn't work, try set it as `from = "github"` or `from = "gitee"`.
+
+
+# Install docker version of `tidymicrobiome`
+
+Docker is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers. So it is useful for people who want to share the code, data, and even analysis environment with other people to repeat their analysis and results.
+
+We provide a docker version of `tidymicrobiome`, all the packages in `tidymicrobiome` and the dependent packages have been installed.
+
+## Install docker
+
+Please refer to the [offical website](https://www.docker.com/get-started) to download and install docker. And then run docker.
+
+![](figures/fig4.png)
+
+## Pull the `tidymicrobiome` image
+
+Open you terminal and then type code below:
+
+```
+docker pull jaspershen/tidymicrobiome:latest
+```
+
+## Run `tidymicrobiome` docker image
+
+In your terminal, run the code below:
+
+```
+docker run -e PASSWORD=tidymicrobiome -p 8787:8787 jaspershen/tidymicrobiome:latest
+```
+
+The below command will link the RStudio home folder with the desktop of the local machine running the container. Anything saved or edited in the home folder when using the container will be stored on the local desktop.
+
+```
+docker run -e PASSWORD=tidymicrobiome -v ~/Desktop:/home/rstudio/ -p 8787:8787 jaspershen/tidymicrobiome:latest
+```
+
+## Open the Rstudio server
+
+Then open the browser and visit http://localhost:8787 to power on RStudio server. The user name is `rstudio` and the password is `tidymicrobiome`.
+
+![](figures/fig5.png)
+![](figures/fig6.png)
+
+![](figures/fig7.png)
+
+![](figures/Untitled.gif)
+
+# Build your own docker image based on `tidymicrobiome`
+
+You can build your own docker image, which contains all your `code`, `data` and `analysis environment`, which is more efficient for reproducible analysis.
+
+## Create `dockerfile`
+
+Create a `dockerfile` without extension. And then open and modify it.
+
+```
+FROM jaspershen/tidymicrobiome:latest
+MAINTAINER "Xiaotao Shen" shenxt1990@outlook.com
+
+RUN apt-get update && apt-get install -y curl
+
+COPY demo_data/ /home/rstudio/demo_data/
+
+RUN chmod 777 /home/rstudio/demo_data/
+
+RUN R -e 'install.packages("remotes")'
+
+RUN R -e "remotes::install_gitlab('jaspershen/tidymicrobiome')"
+```
+
+If you want to install packages (for example `ggraph`) which are necessary for you analysis, please add a new line:
+
+```
+RUN R -e 'install.packages("ggraph")'
+```
+
+And you also need to copy your data to the image use the `COPY`.
+
+## Build image
+
+In the `terminal`, use below code to build the image.
+
+```
+docker build -t image-name -f Dockerfile .
+```
+
+Change the `image-name`.
+
+## Use the `docker tag` command to give the `tidymicrobiome` image a new name
+
+We need to create a account on the docker hub (https://hub.docker.com/) and then use the next code to link the local image to our account.
+
+```
+docker tag image-name your-account/image-name:latest
+```
+
+## Push image to docker hub
+
+```
+docker push your-account/image-name:latest
+```
+
+Then other people can download your image which contains your code, data and analysis environment, which make it is pretty easy to repeat your analysis and results.
+
+How to pull docker image and run it can [refer this document](https://tidymicrobiome.github.io/tidymicrobiome/articles/docker.html).
+
+
+# Session information
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+sessionInfo()
+```
+
+
